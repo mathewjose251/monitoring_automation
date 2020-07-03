@@ -1,28 +1,45 @@
 version: '3'
 
+networks:
+  internal:
+
 services:
   api:
     build: .
     ports: 
      - "80:80"
      - "9100:9100"
+    networks:
+      internal:
+        aliases:
+         - apiserver   
+
 
   prometheus:
     image: "prom/prometheus:latest"
     ports: 
      - "9090:9090"
     volumes:
-      - /prometheus/:/etc/prometheus/
+      - ./prometheus/:/etc/prometheus/
     restart: always
-  # grafana:
-  #   image: grafana/grafana
-  #   user: "472"
-  #   depends_on:
-  #     - prometheus
-  #   ports:
-  #     - "3000:3000"
-  #   #volumes:
-  #   #  - ./grafana/provisioning/:/etc/grafana/provisioning/
-  #   #env_file:
-  #   #  - ./grafana/config.monitoring
-  #   restart: always
+    networks:
+      internal:
+        aliases:
+         - prometheus 
+  grafana:
+    image: grafana/grafana
+    user: "472"
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    restart: always
+    networks:
+      internal:
+        aliases:
+         - prometheus
+    environment:
+     - "GF_SECURITY_ADMIN_USER=admin"
+     - "GF_SECURITY_ADMIN_PASSWORD=password1234"
