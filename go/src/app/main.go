@@ -59,9 +59,9 @@ func startListening() {
 		// takes incoming requests over port 80 and sends
 		// them to the apiHandler to return the json object
 		log.Print("Beginning to serve on port :80 / ")
-		log.Fatal(http.ListenAndServe("localhost:80", httpListen))
+		log.Fatal(http.ListenAndServe("0.0.0.0:80", httpListen))
 	}()
 	// Prometheus metrics endpoint
 	log.Print("Beginning to serve on port :9100 /metrics")
-	log.Fatal(http.ListenAndServe("localhost:9100", metricListen))
+	log.Fatal(http.ListenAndServe("0.0.0.0:9100", metricListen))
 }
