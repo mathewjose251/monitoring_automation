@@ -3,18 +3,12 @@ end to end build of go app, docker container, prometheus, and grafana with dashb
 
 To run container process
 
-1. Install minikube - https://kubernetes.io/docs/tasks/tools/install-minikube/
-   install virtualbox - https://www.virtualbox.org/
-   Download code https://github.com/r00t4ccess/graphana_automation/archive/master.zip or git clone https://github.com/r00t4ccess/graphana_automation.git
+1. install docker - https://docs.docker.com/get-docker/
+   install docker compose - https://docs.docker.com/compose/install/
    
-2. Start an instance of minikube
+2. clone repsitory
 
-minikube start
+3. cd to directory 
 
-
-
-To build code
-
-install go 1.14 - https://golang.org/dl/
-install docker - https://docs.docker.com/get-docker/
+4 docker-compose up
 
