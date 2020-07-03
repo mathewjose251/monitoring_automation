@@ -1,0 +1,37 @@
+version: '3'
+
+networks:
+  host:
+
+services:
+  api:
+    build: .
+    ports:
+      - "80:80"
+      - "9100:9100"
+    networks:
+     - host
+  prometheus:
+    image: "prom/prometheus:latest"
+    ports: 
+     - "9090:9090"
+    #volumes:
+      #- ./prometheus/:/etc/prometheus/
+    #command:
+      #- '--config.file=/etc/prometheus/prometheus.yml'
+      #- '--storage.local.path=/prometheus'
+      #- '--storage.local.memory-chunks=10000'
+    restart: always
+  grafana:
+    image: grafana/grafana
+    user: "472"
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    #volumes:
+    #  - grafana_data:/var/lib/grafana
+    #  - ./grafana/provisioning/:/etc/grafana/provisioning/
+    #env_file:
+    #  - ./grafana/config.monitoring
+    restart: always
