@@ -10,3 +10,6 @@ RUN go get -d github.com/prometheus/client_golang/prometheus
 RUN go build -v .
 
 CMD ["./app"]
+
+EXPOSE 80
+EXPOSE 9100
