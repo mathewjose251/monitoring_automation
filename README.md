@@ -27,7 +27,7 @@ End to end build of go app, docker container, prometheus, and grafana with dashb
 - Prometheus web interface - http://localhost:9090
 - Grafana web interface - http://localhost:3000
 
-- Grafana credentials
+#### Grafana credentials
 - user: admin 
 - password: password1234
 
