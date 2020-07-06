@@ -59,8 +59,7 @@ process_open_fds 11
 ```
 
 ## Prometheus scraper
-The configuration is found in
-prometheus/prometheus.yml
+The configuration is found in prometheus/prometheus.yml and gets mounted to the container at runtime.
 
 ```
   # Scrape the Node Exporter every 5 seconds.
@@ -74,6 +73,8 @@ prometheus/prometheus.yml
 
 The Grafana chart pulls the value "hello_world_http_counter" from the prometheus data set
 and displays the results in a graph
+
+The configuration files are found in grafana/provisioning/ and get mounted to the container at runtime.
 
 ![grafana screen grab](https://github.com/r00t4ccess/monitoring_automation/blob/master/images/helloapi_grafana.png?raw=true)
 
