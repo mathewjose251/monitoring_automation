@@ -39,7 +39,7 @@ services:
     networks:
       internal:
         aliases:
-         - prometheus
+         - grafana
     environment:
      - "GF_SECURITY_ADMIN_USER=admin"
      - "GF_SECURITY_ADMIN_PASSWORD=password1234"
