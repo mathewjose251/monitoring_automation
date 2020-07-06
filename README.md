@@ -3,18 +3,19 @@ End to end build of go app, docker container, prometheus, and grafana with dashb
 
 ## How to run the stack
 
-1. install docker - https://docs.docker.com/get-docker/
+1. Install docker - https://docs.docker.com/get-docker/
 
-   install docker compose - https://docs.docker.com/compose/install/
+   Install docker compose - https://docs.docker.com/compose/install/
    
-   install git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+   Install git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
    
-2. clone repsitory
-   e.g git clone https://github.com/r00t4ccess/monitoring_automation.git
+2. Clone repsitory
+   
+   git clone https://github.com/r00t4ccess/monitoring_automation.git
 
 3. cd monitoring_automation 
 
-4. docker-compose up
+4.  Run docker-compose up
 
    Once everything is loaded the screen will output log information
 
@@ -32,7 +33,7 @@ End to end build of go app, docker container, prometheus, and grafana with dashb
 - password: password1234
 
 ## Api Server
-The api can be accessed from a browser or the command like with something like curl
+The api can be accessed from a browser or the command line with curl
 
 ```sh
 user $: curl localhost
@@ -59,7 +60,7 @@ process_open_fds 11
 ```
 
 ## Prometheus scraper
-The configuration is found in prometheus/prometheus.yml and gets mounted to the container at runtime.
+The configuration file is found in prometheus/prometheus.yml and gets mounted to the container at runtime.
 
 ```
   # Scrape the Node Exporter every 5 seconds.
@@ -69,7 +70,7 @@ The configuration is found in prometheus/prometheus.yml and gets mounted to the 
       - targets: ['apiserver:9100']
 ```
 
-## Grafana Chart
+## Grafana chart
 
 The Grafana chart pulls the value "hello_world_http_counter" from the prometheus data set
 and displays the results in a graph
