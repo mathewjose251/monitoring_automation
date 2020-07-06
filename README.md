@@ -75,7 +75,7 @@ prometheus/prometheus.yml
 The Grafana chart pulls the value "hello_world_http_counter" from the prometheus data set
 and displays the results in a graph
 
-![grafana screen grab](https://github.com/r00t4ccess/monitoring_automation/tree/master/images/helloapi_grafana.png)
+![grafana screen grab](https://github.com/r00t4ccess/monitoring_automation/blob/master/images/helloapi_grafana.png?raw=true)
 
 ### Container network
 The containers talk to each other over the internal docker network called "internal"
