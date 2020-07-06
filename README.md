@@ -15,19 +15,21 @@ End to end build of go app, docker container, prometheus, and grafana with dashb
 3. cd monitoring_automation 
 
 4. docker-compose up
+
    Once everything is loaded the screen will output log information
+
    To kill press ctrl+c
 
 ## Accessing the components
 
-Api endpoint - http://localhost
-App metrics endpoint - http://localhost:9100
-Prometheus web interface - http://localhost:9090
-Grafana web interface - http://localhost:3000
+- Api endpoint - http://localhost
+- App metrics endpoint - http://localhost:9100
+- Prometheus web interface - http://localhost:9090
+- Grafana web interface - http://localhost:3000
 
-Grafana credentials
-user: admin 
-password: password1234
+- Grafana credentials
+- user: admin 
+- password: password1234
 
 ## Api Server
 The api can be accessed from a browser or the command like with something like curl
