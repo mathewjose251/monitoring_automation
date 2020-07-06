@@ -1,4 +1,4 @@
-# monitoring_automation
+# Monitoring and Metrics Collection Automation
 End to end build of go app, docker container, prometheus, and grafana with dashboard.
 
 ## How to run the stack
